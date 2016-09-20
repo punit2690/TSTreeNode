@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TSTree : NSObject
+@interface TSTreeNode : NSObject
+
+- (void)parseDataSet:(NSArray *)dataSet;
+- (NSSet*)findValuesForTerm:(NSString*)value;
 
 @end

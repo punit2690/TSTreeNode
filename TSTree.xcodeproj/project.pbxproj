@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D6A01E31D9162E2000AF92A /* TSTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6A01E21D9162E2000AF92A /* TSTree.m */; };
-		8D6A01E41D9162E2000AF92A /* TSTree.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D6A01E11D9162E2000AF92A /* TSTree.h */; };
+		8D6A01E31D9162E2000AF92A /* TSTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6A01E21D9162E2000AF92A /* TSTreeNode.m */; };
+		8D6A01E41D9162E2000AF92A /* TSTreeNode.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D6A01E11D9162E2000AF92A /* TSTreeNode.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -18,7 +18,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				8D6A01E41D9162E2000AF92A /* TSTree.h in CopyFiles */,
+				8D6A01E41D9162E2000AF92A /* TSTreeNode.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -26,8 +26,8 @@
 
 /* Begin PBXFileReference section */
 		8D6A01DE1D9162E2000AF92A /* libTSTree.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTSTree.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D6A01E11D9162E2000AF92A /* TSTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSTree.h; sourceTree = "<group>"; };
-		8D6A01E21D9162E2000AF92A /* TSTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSTree.m; sourceTree = "<group>"; };
+		8D6A01E11D9162E2000AF92A /* TSTreeNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSTreeNode.h; sourceTree = "<group>"; };
+		8D6A01E21D9162E2000AF92A /* TSTreeNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TSTreeNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +60,8 @@
 		8D6A01E01D9162E2000AF92A /* TSTree */ = {
 			isa = PBXGroup;
 			children = (
-				8D6A01E11D9162E2000AF92A /* TSTree.h */,
-				8D6A01E21D9162E2000AF92A /* TSTree.m */,
+				8D6A01E11D9162E2000AF92A /* TSTreeNode.h */,
+				8D6A01E21D9162E2000AF92A /* TSTreeNode.m */,
 			);
 			path = TSTree;
 			sourceTree = "<group>";
@@ -124,7 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D6A01E31D9162E2000AF92A /* TSTree.m in Sources */,
+				8D6A01E31D9162E2000AF92A /* TSTreeNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
