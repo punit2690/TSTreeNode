@@ -10,12 +10,9 @@
 
 @interface TSTreeNode()
 
-@property (nonatomic, strong) NSMutableDictionary *mutableDict;
-@property (nonatomic, assign) BOOL isLeafNode;
+@property (nonatomic, strong) NSMutableDictionary *nodesDict;
+@property (nonatomic, assign, getter=isLeafNode) BOOL leafNode;
 @property (nonatomic, strong) NSMutableSet *entries;
-
-- (void)setNode:(TSTreeNode *)node forKey:(NSString *)key;
-- (TSTreeNode *)nodeForKey:(NSString *)key;
 
 @end
 
@@ -24,18 +21,18 @@
 - (instancetype)init {
     
     if (self=[super init]) {
-        _mutableDict = [NSMutableDictionary new];
+        _nodesDict = [NSMutableDictionary new];
         _entries = [NSMutableSet new];
     }
     return self;
 }
 
 - (void)setNode:(TSTreeNode *)node forKey:(NSString *)key {
-    [_mutableDict setObject:node forKey:key];
+    [_nodesDict setObject:node forKey:key];
 }
 
 - (TSTreeNode *)nodeForKey:(NSString *)key {
-    return [self.mutableDict objectForKey:key];
+    return [self.nodesDict objectForKey:key];
 }
 
 #pragma mark - Information Feeding
@@ -43,14 +40,14 @@
 + (void)parseString:(NSString *)inputString inNode:(TSTreeNode *)node origString:(NSString *)origString {
     
     [node.entries addObject:origString];
-    TSTreeNode *nextNode = [node.mutableDict objectForKey:[inputString substringWithRange:NSMakeRange(0, 1)]];
+    TSTreeNode *nextNode = [node.nodesDict objectForKey:[inputString substringWithRange:NSMakeRange(0, 1)]];
     if (!nextNode) {
         nextNode = [[TSTreeNode alloc] init];
         [node setNode:nextNode forKey:[inputString substringWithRange:NSMakeRange(0, 1)]];
     }
     
     if (inputString.length == 1) {
-        nextNode.isLeafNode = YES;
+        nextNode.leafNode = YES;
     }
     else {
         [TSTreeNode parseString:[inputString substringWithRange:NSMakeRange(1, inputString.length-1)] inNode:nextNode origString:origString];
@@ -73,7 +70,7 @@
         nodeToUse = [nodeToUse nodeForKey:[value substringWithRange:NSMakeRange(i, 1)]];
     }
     
-    NSMutableSet *setToReturn = nodeToUse.entries;;
+    NSMutableSet *setToReturn = nodeToUse.entries;
     if (nodeToUse.isLeafNode) {
         [setToReturn addObject:value];
     }
