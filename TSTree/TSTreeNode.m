@@ -70,11 +70,10 @@
         nodeToUse = [nodeToUse nodeForKey:[value substringWithRange:NSMakeRange(i, 1)]];
     }
     
-    NSMutableSet *setToReturn = nodeToUse.entries;
     if (nodeToUse.isLeafNode) {
-        [setToReturn addObject:value];
+        [nodeToUse.entries addObject:value];
     }
-    return setToReturn.copy;
+    return nodeToUse.entries.copy;
 }
 
 @end
